@@ -5,7 +5,8 @@ const StyledHeader = styled.div`
     z-index: 1;
     position:fixed; 
     width:100%; 
-    height:60px; 
+    height:60px;
+    margin-bottom: 60px; 
     background:rgba(0,0,0,0.1);
     
     & a {
@@ -13,7 +14,7 @@ const StyledHeader = styled.div`
         background:rgba(0,0,0,0.1); 
         display:inline-block; 
         padding:0px 30px; 
-        height:60px;
+        height: 60px;
         line-height:60px; 
         text-align:center;
         font-family: 'Roboto Slab', serif; 

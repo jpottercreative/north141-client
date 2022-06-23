@@ -7,10 +7,10 @@ const THEMES = {
 
 const useDarkTheme = () => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
-    const themeToggler = () => {
+    const themeToggle = () => {
         theme === THEMES.LIGHT ? setTheme(THEMES.DARK) : setTheme(THEMES.LIGHT);
     };
-    return [theme, themeToggler];
+    return [theme, themeToggle];
 };
 
 export default useDarkTheme;

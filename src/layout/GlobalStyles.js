@@ -13,7 +13,7 @@ html, body{
   }
   
 body {
-     font-family: "Monaco", monospace;
+    font-family: 'Roboto', sans-serif;
      background: ${({ theme }) => theme.background};
      color: ${({ theme }) => theme.color};
      transition: all 2s linear; 
