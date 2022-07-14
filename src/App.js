@@ -9,7 +9,6 @@ import useDarkTheme from "./hooks/useDarkTheme";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import PostList from './components/PostList';
 import PostGrid from './components/PostGrid'
 import HeroSection from './components/HeroSection';
 
@@ -19,6 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
    padding: theme.spacing(1),
    textAlign: 'center',
    color: theme.palette.text.secondary,
+   borderRadius: 0,
  }));
 
 function App() {

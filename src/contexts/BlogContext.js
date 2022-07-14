@@ -12,6 +12,7 @@ export const BlogProvider = ({children}) => {
     const [posts, setPosts] = useState([])
     const [nav_value, set_nav_value] = useState("Home")
     const [postId, setPostId] = useState("")
+    const [components, getComponents] = useState([])
 
     //change nav
     const changeNavValue = (value) => {
@@ -30,6 +31,14 @@ export const BlogProvider = ({children}) => {
         }
         return readAllPosts
     }, [])
+
+  
+    const homeComponents = async () => {
+        const response = await http.get ("/api/homepage")
+        const responseArr = Object.values(response.data.data)
+        
+    }
+    
     console.log(posts)
 
     const value = {
