@@ -4,7 +4,7 @@ import { CssBaseline } from '@mui/material';
 // import { GlobalStyles } from "./layout/GlobalStyles";
 import { appTheme } from "./layout/theme";
 import { styled, ThemeProvider } from '@mui/material/styles';
-import useDarkTheme from "./hooks/useDarkTheme";
+// import useDarkTheme from "./hooks/useDarkTheme";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -21,9 +21,12 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 function App() {
-   const [isDarkMode, toggleDarkMode] = useState(true)
+   const [isDarkMode, setIsDarkMode] = useState(true)
    const [navigation, setNavigation] = useState('')
    
+   const toggleDarkMode = () => {
+      setIsDarkMode((isDarkMode) => !isDarkMode)
+   }
    const AppBody = () => {
       // switch tree for navigation
       switch (navigation) {
@@ -42,15 +45,15 @@ function App() {
       }
    }
 
-   const injectTheme = 
-   console.log(theme)
+   
+   console.log(isDarkMode)
    console.log(navigation)
   
   return (
       <ThemeProvider theme={appTheme}>
          <CssBaseline enableColorScheme />
          
-         <Header themeToggle={themeToggle} setNavigation={setNavigation}/>
+         <Header toggleDarkMode={toggleDarkMode} setNavigation={setNavigation}/>
          <h2>
             hello
          </h2>

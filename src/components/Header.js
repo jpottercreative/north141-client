@@ -10,7 +10,7 @@ import EggIcon from '@mui/icons-material/Egg';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import LightIcon from '@mui/icons-material/Light';
 
-export default function Header( { setNavigation, themeToggle } ) {
+export default function Header( { setNavigation, toggleDarkMode } ) {
 
   const handleNav = (e) => {
     setNavigation(e.currentTarget.name)
@@ -63,7 +63,7 @@ export default function Header( { setNavigation, themeToggle } ) {
             color="inherit"
             aria-label="about"
             sx={{ mr: 2 }}
-            onClick={themeToggle}
+            onClick={toggleDarkMode}
           >
             <LightIcon name="template_mode"/>
           </IconButton>
