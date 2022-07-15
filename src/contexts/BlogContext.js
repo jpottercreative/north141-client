@@ -32,12 +32,6 @@ export const BlogProvider = ({children}) => {
         return readAllPosts
     }, [])
 
-  
-    const homeComponents = async () => {
-        const response = await http.get ("/api/homepage")
-        const responseArr = Object.values(response.data.data)
-        
-    }
     
     console.log(posts)
 

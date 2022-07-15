@@ -20,7 +20,7 @@ with the API key that Mr. Potter provides to you
 
 `npm start`
 
-if you are using `local.north141.com` (just JP for now, this is a reminder)
+if you are using `local.north141.com` (just JP for now, this is a reminder space-cadet)
 
 run: 
 
