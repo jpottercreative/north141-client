@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from "./layout/GlobalStyles";
@@ -9,8 +9,7 @@ import useDarkTheme from "./hooks/useDarkTheme";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import PostGrid from './components/PostGrid'
-import HeroSection from './components/HeroSection';
+import Header from './components/Header';
 
 const Item = styled(Paper)(({ theme }) => ({
    backgroundColor: theme.palette.mode === 'light' ? '#1A2027' : '#fff',
@@ -21,34 +20,39 @@ const Item = styled(Paper)(({ theme }) => ({
    borderRadius: 0,
  }));
 
+
 function App() {
   const [theme, themeToggle] = useDarkTheme();
   const selectedTheme = theme === 'light' ? lightTheme : darkTheme;
-
+   const [navigation, setNavigation] = useState('')
+   
+   const AppBody = () => {
+      switch (navigation) {
+         case 'home' :
+            return <p>hello world 1 i'm home</p>
+            break
+         case 'articles' :
+            return <p>articles articles articles</p>
+            break
+         case 'about' :
+            return <p>you want to know about this?</p>
+            break
+         default: 
+            return <p>default</p>
+      }
+   }
   
   return (
       <ThemeProvider theme={selectedTheme}>
          <GlobalStyles />
-            <Box sx={{flexGrow: 1}}>
-               <Grid item xs>
-                  <Item><h1>Hello whirlled</h1></Item>
-               </Grid>
-               <Grid item xs>
-                  <Item>
-                     <HeroSection section={1}/>
-                  </Item>
-               </Grid>
-               <Grid item xs>
-                  <Item>
-                     <PostGrid />
-                  </Item>
-               </Grid>
-               <Grid item xs>
-                  <Item>
-                     <HeroSection section={1}/>
-                  </Item>
-               </Grid>
-        </Box>
+         
+         <Header navigation={navigation} setNavigation={setNavigation}/>
+         <h2>
+            hello
+         </h2>
+         <div>
+            {AppBody}
+         </div>
      </ThemeProvider>
   )
 }
