@@ -27,12 +27,14 @@ function App() {
    const [navigation, setNavigation] = useState('')
    
    const AppBody = () => {
+      
       switch (navigation) {
          case 'home' :
             return <p>hello world 1 i'm home</p>
             break
          case 'articles' :
             return <p>articles articles articles</p>
+
             break
          case 'about' :
             return <p>you want to know about this?</p>
@@ -41,6 +43,7 @@ function App() {
             return <p>default</p>
       }
    }
+   console.log(navigation)
   
   return (
       <ThemeProvider theme={selectedTheme}>
@@ -51,7 +54,7 @@ function App() {
             hello
          </h2>
          <div>
-            {AppBody}
+            <AppBody />
          </div>
      </ThemeProvider>
   )

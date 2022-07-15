@@ -1,38 +1,3 @@
-// import React from 'react'
-// import styled from 'styled-components'
-
-// const StyledHeader = styled.div`
-//     z-index: 1;
-//     position:inline; 
-//     width:100%; 
-//     height:60px;
-//     margin-bottom: 60px; 
-//     background:rgba(0,0,0,0.1);
-    
-//     & a {
-//         color:white;
-//         background:rgba(0,0,0,0.1); 
-//         display:inline-block; 
-//         padding:0px 30px; 
-//         height: 60px;
-//         line-height:60px; 
-//         text-align:center;
-//         font-family: 'Roboto Slab', serif; 
-//         text-decoration:none;
-//         text-transform:uppercase; 
-//         letter-spacing:2px; 
-//         font-weight:700;
-//   `
-
-// function Header() {
-//   return (
-//     <StyledHeader>
-//         This is the Header
-//         <a href="http://google.com">link?</a>    
-//     </StyledHeader>
-//   )
-// }
-
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -40,26 +5,53 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import CookieIcon from '@mui/icons-material/Cookie';
+import EggIcon from '@mui/icons-material/Egg';
+import FastfoodIcon from '@mui/icons-material/Fastfood';
 
-export default function Header() {
+export default function Header( { setNavigation } ) {
+
+  const handleNav = (e) => {
+    setNavigation(e.currentTarget.name)
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
+            name="home"
             size="large"
             edge="start"
             color="inherit"
-            aria-label="menu"
+            aria-label="home"
             sx={{ mr: 2 }}
+            onClick={handleNav}
           >
-            <MenuIcon />
+            <CookieIcon name="home"/>
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <IconButton
+            name="articles"
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="articles"
+            sx={{ mr: 2 }}
+            onClick={handleNav}
+          >
+            <EggIcon name="articles"/>
+          </IconButton>
+          <IconButton
+            name="about"
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="about"
+            sx={{ mr: 2 }}
+            onClick={handleNav}
+          >
+            <FastfoodIcon name="about"/>
+          </IconButton>
+
         </Toolbar>
       </AppBar>
     </Box>
