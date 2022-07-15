@@ -1,32 +1,49 @@
-# jp blog 2022
-## maybe this is going to be a thing
+## North 141 rides again
 
-Development Local startup:
+In Development! (7/14/22)
 
-Backend: 
-pm2 start ecosystem.config.js 
+This is a react front-end that calls a RESTful headless backend at `api.north141.com`
 
-Front-end:
-npm start
+---
+### To work on this repo:
+clone it down
 
-then: 
-dev-nginx start
+create .env file in project root, add 
 
-dev.north141.com for local backend development	
-local.north141.com for local frontend development
+`REACT_APP_TOKEN=your-api-key-here` 
+
+with the API key that Mr. Potter provides to you
+
+---
+
+### To start the dev client:
+
+`npm start`
+
+if you are using `local.north141.com` (just JP for now, this is a reminder)
+
+run: 
+
+`dev-nginx start`
+
+---
+
+Major API endpoints:
 
 
+---
+some ad-hoc development notes:
 
-Front end in React with styled components:
+Front end in React with styled components and Material UI:
 
-INDEX pages
+**INDEX pages**
 
-» Landing (home) Page - full width hero top section, articles, about section, skills section?
+> » Landing (home) Page - full width hero top section, articles, about section, why us section  - [see here on figma](https://www.figma.com/file/c1ORDWbGMv5l3os0HwlWjC/north-141---2022?node-id=0%3A1)
 
-» All Posts page - masonry with lots of white space »Search/Tag Search
+> » All Posts page - masonry with lots of white space »Search/Tag Search
+>>  » can this be whipped up with a material ui component?*
 
-
-TEMPLATE pages
+**TEMPLATE pages**
 
 » Photo post - »HERO (image with text) »ABOUT (text) »4-image blocks?
 
