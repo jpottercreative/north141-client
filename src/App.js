@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyles } from "./layout/GlobalStyles";
-import { lightTheme, darkTheme } from "./layout/theme";
-import { styled } from '@mui/material/styles';
-import ThemeToggle from "./components/ThemeToggle";
+import { CssBaseline } from '@mui/material';
+// import { GlobalStyles } from "./layout/GlobalStyles";
+import { appTheme } from "./layout/theme";
+import { styled, ThemeProvider } from '@mui/material/styles';
 import useDarkTheme from "./hooks/useDarkTheme";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -22,12 +21,11 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 function App() {
-  const [theme, themeToggle] = useDarkTheme();
-  const selectedTheme = theme === 'light' ? lightTheme : darkTheme;
+   const [isDarkMode, toggleDarkMode] = useState(true)
    const [navigation, setNavigation] = useState('')
    
    const AppBody = () => {
-      
+      // switch tree for navigation
       switch (navigation) {
          case 'home' :
             return <p>hello world 1 i'm home</p>
@@ -43,13 +41,16 @@ function App() {
             return <p>default</p>
       }
    }
+
+   const injectTheme = 
+   console.log(theme)
    console.log(navigation)
   
   return (
-      <ThemeProvider theme={selectedTheme}>
-         <GlobalStyles />
+      <ThemeProvider theme={appTheme}>
+         <CssBaseline enableColorScheme />
          
-         <Header navigation={navigation} setNavigation={setNavigation}/>
+         <Header themeToggle={themeToggle} setNavigation={setNavigation}/>
          <h2>
             hello
          </h2>

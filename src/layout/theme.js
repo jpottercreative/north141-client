@@ -1,11 +1,17 @@
-export const lightTheme = {
-    background: '#fff',
-    color: '#1d1f28',
-    buttonBg: '#c5718d'
-}
+import { blue, pink, purple } from "@mui/material/colors";
+import { createTheme } from "@mui/material/styles";
 
-export const darkTheme = {
-    background: '#1d1f28',
-    color: '#fafafa',
-    buttonBg: '#515d90'
-}
+export const appTheme = createTheme({
+    palette: {
+        primary: {
+          light: blue[300],
+          main: purple[500],
+          dark: blue[700],
+        },
+        secondary: {
+          light: pink[300],
+          main: "#11cb5f",
+          dark: pink[700],
+        },
+      },
+});

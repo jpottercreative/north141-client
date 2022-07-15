@@ -8,15 +8,19 @@ import IconButton from '@mui/material/IconButton';
 import CookieIcon from '@mui/icons-material/Cookie';
 import EggIcon from '@mui/icons-material/Egg';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
+import LightIcon from '@mui/icons-material/Light';
 
-export default function Header( { setNavigation } ) {
+export default function Header( { setNavigation, themeToggle } ) {
 
   const handleNav = (e) => {
     setNavigation(e.currentTarget.name)
   }
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static"
+      color="primary"
+      >
         <Toolbar>
           <IconButton
             name="home"
@@ -51,7 +55,18 @@ export default function Header( { setNavigation } ) {
           >
             <FastfoodIcon name="about"/>
           </IconButton>
-
+          <Box sx={{ flexGrow: 1 }}></Box>
+          <IconButton
+            name="about"
+            size="large"
+            edge="end"
+            color="inherit"
+            aria-label="about"
+            sx={{ mr: 2 }}
+            onClick={themeToggle}
+          >
+            <LightIcon name="template_mode"/>
+          </IconButton>
         </Toolbar>
       </AppBar>
     </Box>

@@ -16,6 +16,8 @@ body {
     font-family: 'Roboto', sans-serif;
      background: ${({ theme }) => theme.background};
      color: ${({ theme }) => theme.color};
-     transition: all 2s linear; 
+     transition: all .3s linear; 
   }
+
+  
 `
