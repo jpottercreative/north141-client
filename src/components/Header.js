@@ -19,7 +19,7 @@ export default function Header( { setNavigation, toggleDarkMode } ) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static"
-      color="primary"
+      color="secondary" enableColorOnDark
       >
         <Toolbar>
           <IconButton

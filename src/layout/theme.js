@@ -5,12 +5,12 @@ export const appTheme = createTheme({
     palette: {
         primary: {
           light: blue[300],
-          main: purple[500],
+          main: "#080091",
           dark: blue[700],
         },
         secondary: {
           light: pink[300],
-          main: "#11cb5f",
+          main: "#e09bcd",
           dark: pink[700],
         },
       },
