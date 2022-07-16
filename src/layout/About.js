@@ -12,20 +12,14 @@ function About() {
     useEffect(() => {
         const getPageData = async () => {
             const response = await http.get("/api/about?populate=*")
-            setPageData(response.data.data.attributes)
-            
+            const asyncData = await response
+            // console.log(asyncData.data.data.attributes.images.data[0].attributes.formats.medium.url)
+            setPageData(asyncData.data.data.attributes)
+            setImageArray(asyncData.data.data.attributes.images.data)
         }
         return getPageData
     }, [])
-
-    useEffect(() => {
-        const safeLogger = async () => {
-            const response = await pageData;
-            console.log(response.images)
-        }
-        return  safeLogger
-    }, [pageData])
-
+    console.log(imageArray)
   return (
     <Paper >
         <Container component="main" maxWidth="sm" >
@@ -44,7 +38,7 @@ function About() {
                 sx={{m: 5}}>
                     <Typography variant="h2" component="p">{pageData.title}</Typography>
                     <Typography variant="p">{pageData.about_copy}</Typography>
-                    <ImageListStandard />
+                    <ImageListStandard images={imageArray}/>
                 </Box>
             </Paper>
         </Box>

@@ -33,7 +33,7 @@ export const BlogProvider = ({children}) => {
     }, [])
 
     
-    console.log(posts)
+    // console.log(posts)
 
     const value = {
             posts,
