@@ -10,12 +10,13 @@ import Header from './components/Header';
 import Homepage from "./layout/Homepage"
 import Articles from "./layout/Articles"
 import About from './layout/About';
+import Typography from '@mui/material/Typography';
 import { createTheme } from "@mui/material/styles";
 
 function App() {
    const [isDarkMode, setIsDarkMode] = useState(true)
    const [colorMode, setColorMode] = useState('light')
-   const [navigation, setNavigation] = useState('')
+   const [navigation, setNavigation] = useState('home')
    
    const toggleDarkMode = () => {
       setIsDarkMode((isDarkMode) => !isDarkMode)
@@ -53,12 +54,12 @@ function App() {
          <CssBaseline enableColorScheme />
          
          <Header toggleDarkMode={toggleDarkMode} setNavigation={setNavigation}/>
-         <h2>
+         <Typography variant='h3'>
              + {navigation.toUpperCase()}
-         </h2>
-         <div>
+         </Typography>
+         <Box>
             <AppBody />
-         </div>
+         </Box>
          </ThemeProvider>
      </ThemeProvider>
   )

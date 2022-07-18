@@ -7,7 +7,7 @@ export default function ImageListStandard( { images } ) {
     images.map((i) => console.log(i.attributes.formats.medium.url))
     images.map((i) => console.log(i))
   return (
-    <ImageList sx={{ width: 500, height: 450 }} cols={2} rowHeight={200}>
+    <ImageList sx={{ height: 'auto' }} cols={2} rowHeight={200}>
       {images.map((item) => (
         <ImageListItem key={item.id}>
           <img

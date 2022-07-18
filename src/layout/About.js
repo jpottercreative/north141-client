@@ -21,27 +21,29 @@ function About() {
     }, [])
     console.log(imageArray)
   return (
-    <Paper >
-        <Container component="main" maxWidth="sm" >
+    <Paper elevation={0}>
+        <Container component="main" maxWidth="md" >
 
             <Box
             sx={{
-                height: '100vh',
-                marginTop: 8,
+                height: 'auto',
+                marginTop: 0,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
             }}
+            className={'thing'}
             >
-            <Paper elevation={3} sx={{mt: 5}}>
-                <Box
-                sx={{m: 5}}>
-                    <Typography variant="h2" component="p">{pageData.title}</Typography>
-                    <Typography variant="p">{pageData.about_copy}</Typography>
-                    <ImageListStandard images={imageArray}/>
-                </Box>
-            </Paper>
-        </Box>
+                <Paper elevation={5} sx={{m: 5}}>
+                    <Box
+                    sx={{m: 5, height: 'auto'}}>
+                        
+                        <Typography variant="h2" component="p">About {pageData.title}</Typography>
+                        <Typography variant="p">{pageData.about_copy}</Typography>
+                        <ImageListStandard images={imageArray}/>
+                    </Box>
+                </Paper>
+            </Box>
         </Container>
       </Paper>
   )
