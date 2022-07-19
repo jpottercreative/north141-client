@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Header from './components/Header';
 import Homepage from "./layout/Homepage"
-import Articles from "./layout/Articles"
+import Articles from "./components/Articles/Articles"
 import About from './layout/About';
 import Typography from '@mui/material/Typography';
 import { createTheme } from "@mui/material/styles";
@@ -16,7 +16,7 @@ import { createTheme } from "@mui/material/styles";
 function App() {
    const [isDarkMode, setIsDarkMode] = useState(true)
    const [colorMode, setColorMode] = useState('light')
-   const [navigation, setNavigation] = useState('home')
+   const [navigation, setNavigation] = useState('articles')
    
    const toggleDarkMode = () => {
       setIsDarkMode((isDarkMode) => !isDarkMode)
