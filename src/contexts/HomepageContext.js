@@ -10,14 +10,16 @@ export const useHomepageContext = () => {
 
 //create provider
 export const HomepageProvider = ({children}) => {
-    const [homepageData, setHomepageData] = usestate({})
+    const [homepageData, setHomepageData] = useState({})
 
     //get homepageData
 
     useEffect(() => {
         const getHomepage = async () => {
-            const response = await http.get("/api/homepage?populate=deep")
+            const response = await http.get("/api/homepage?populate=*")
             console.log(`getHomepagedata response: ${response}`)
+            // const responseArr = await Object.values(response.data.data)
+            
         }
         return getHomepage
     }, [])

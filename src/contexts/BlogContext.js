@@ -26,7 +26,7 @@ export const BlogProvider = ({children}) => {
     useEffect(() => {
         const readAllPosts = async () => {
             const response = await http.get("/api/blogposts?populate=featured_image,tags,display_locations")
-            const responseArr = Object.values(response.data.data)
+            const responseArr = await Object.values(response.data.data)
             setPosts(responseArr)
         }
         return readAllPosts

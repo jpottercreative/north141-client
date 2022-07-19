@@ -4,26 +4,32 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 
 
-function ArticleSearch( { filter, setFilter } ) {
+function ArticleSearch( { postFilter, setPostFilter } ) {
 
     // const [filter, setFilter] = useState({
-    //     filterType: 'text',
-    //     filterText: '',
-    //     filteredPosts: [],
+      // type: 'text',
+      // text: '',
+      // posts: [],
     //   })
-    
+    const handleTextChange = (e) => {
+      // console.log(e.target.value)
+      setPostFilter({
+        type: 'text',
+        text: e.target.value,
+        posts: [],
+      })
+    }
   return (
     <Box
     component="form"
     sx={{
-      '& > :not(style)': { m: 1, width: '25ch' },
+      '& > :not(style)': { m: 1, width: '100%' },
     }}
     noValidate
-    autoComplete="off"
+    autoComplete="on"
+    onSubmit={(e)=> {e.preventDefault()}}
   >
-    <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-    <TextField id="filled-basic" label="Filled" variant="filled" />
-    <TextField id="standard-basic" label="Standard" variant="standard" />
+    <TextField onChange={handleTextChange} value={postFilter.text} id="search" label="Search" variant="outlined" />
   </Box>
   )
 }

@@ -1,8 +1,12 @@
 import React from 'react'
+import { HomepageProvider } from '../contexts/HomepageContext'
 
 function Homepage() {
   return (
-    <div>Homepage or is it?</div>
+    <HomepageProvider>
+        
+
+    </HomepageProvider>
   )
 }
 
