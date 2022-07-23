@@ -1,12 +1,23 @@
 import React from 'react'
 import { useHomepageContext } from '../../contexts/HomepageContext'
+import Articles from '../Articles/Articles'
+import Box from '@mui/material/Box';
 
 function HomepageLayout() {
     const {homepageData} = useHomepageContext()
-    console.log(homepageData)
-    
+    // console.log(`your homepage data~: `)
+    // console.log(homepageData)
+
   return (
-    <div>HomepageLayout</div>
+    <Box
+    sx={{m: "3em"}}>
+      <Box>
+      Your homepage friend
+      </Box>
+      <Articles postOverride={homepageData.blogposts}/>
+    
+
+    </Box>
   )
 }
 

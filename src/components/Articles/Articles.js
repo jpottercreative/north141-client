@@ -4,13 +4,37 @@ import ArticleLayout from './ArticleLayout'
 
 
 function Articles( { postOverride } ) {
+  const [overrides, setOverrides] = useState([])
 
-  if (postOverride) console.log(`postOverride received: ` + postOverride)
+ if (postOverride) {
+    async function override() {
+      try {
+        const response = await postOverride
+        console.log(response)
+        const data = await response
+        console.log(data)
+        setOverrides(data)
+      }
+      catch(error) {
+        console.log(`Could not get overrides: ${error}`);
+      }
+    }
+    override()
+  }
 
-  let parsedPostOverride = []
+  
+
+  console.log(overrides)
+
+  const postOverrideFilter = {
+    type: 'posts',
+    text: '',
+    posts: overrides.data,
+  }
+
   return (
     <ArticleProvider>
-        <ArticleLayout postOverride={parsedPostOverride}/>
+        <ArticleLayout postOverrideFilter={postOverrideFilter}/>
     </ArticleProvider>
   )
 }

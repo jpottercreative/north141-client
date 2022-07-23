@@ -10,12 +10,12 @@ export const useArticleContext = () => {
 // create provider
 export const ArticleProvider = ({children}) => {
     const [posts, setPosts] = useState([])
-    const [postId, setPostId] = useState("")
+    // const [postId, setPostId] = useState("")
 
-    //get post id
-    const getPostId = (id) => {
-        setPostId(id)
-    }
+    // //get post id
+    // const getPostId = (id) => {
+    //     setPostId(id)
+    // }
 
 
     useEffect(() => {
@@ -33,8 +33,8 @@ export const ArticleProvider = ({children}) => {
 
     const value = {
             posts,
-            postId, 
-            getPostId,
+            // postId, 
+            // getPostId,
     }
     
     return(

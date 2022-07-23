@@ -4,7 +4,7 @@ import ArticleGrid from './ArticleGrid';
 import { useArticleContext } from '../../contexts/ArticleContext'
 import ArticleSearch from './ArticleSearch';
 
-function ArticleLayout( { postOverride } ) {
+function ArticleLayout( { postOverrideFilter } ) {
     const [filteredPosts, setFilteredPosts] = useState([])
     const [postFilter, setPostFilter] = useState({
       type: 'text',
@@ -12,35 +12,28 @@ function ArticleLayout( { postOverride } ) {
       posts: [],
     })
     const { posts }  = useArticleContext()
-// console.log(posts)
-
-    // postOverride.posts ? setPostFilter({
-    //     type: 'post',
-    //     text: '',
-    //     posts: [...postOverride.posts]
-    // }) : null
-
-    const filteredPostData = posts.filter((post) => {
-        switch(postFilter.type) {
-            case 'text' :
-                return Object.values(post.attributes.title || post.attributes.seo_description).join('').toLowerCase().includes(postFilter.text.toLowerCase())
-                break
-            case 'posts' :
-                return postFilter.posts
-                break
-            default :
-                return ''
-        }
-      })
-    //   const filteredSearchedStudentData = searchedStudentData.filter((student) => {
-    //     return Object.values(student.tags).join('').toLowerCase().includes(searchTags.toLowerCase())
-    //   })
-    // console.log(filteredPostData)
+    
+    if (postOverrideFilter) setPostFilter(postOverrideFilter)
+    
+// send EITHER filtered post data, OR post override data one set or another
+    // const filteredPostData = () => {
+    //     switch(postFilter.type) {
+    //         case 'text' :
+    //             return posts.filter((post) => Object.values(post.attributes.title || post.attributes.seo_description).join('').toLowerCase().includes(postFilter.text.toLowerCase()))
+    //             break
+    //         case 'posts' :
+    //             return postFilter.posts.data
+    //             break
+    //         default :
+    //             return ''
+    //     }
+    //   }
+    //   console.log(filteredPostData())
 
   return (
     <Box sx={{ flexGrow: 1 }}>
         {/* <ArticleSearch postFilter={postFilter} setPostFilter={setPostFilter} /> */}
-        <ArticleGrid postFilter={postFilter} posts={filteredPostData}/>
+        <ArticleGrid posts={filteredPostData}/>
     </Box>
   )
 }
