@@ -10,10 +10,10 @@ function Articles( { postOverride } ) {
     async function override() {
       try {
         const response = await postOverride
-        console.log(response)
+        // console.log(response)
         const data = await response
-        console.log(data)
-        setOverrides(data)
+        // console.log(data)
+        setOverrides(data.data)
       }
       catch(error) {
         console.log(`Could not get overrides: ${error}`);
@@ -22,19 +22,18 @@ function Articles( { postOverride } ) {
     override()
   }
 
-  
+  // console.log(Object.entries(overrides).length)
 
   console.log(overrides)
 
-  const postOverrideFilter = {
-    type: 'posts',
-    text: '',
-    posts: overrides.data,
+  
+  const ReturnLayout = () => {
+    return overrides.length > 0 ? <ArticleLayout postOverrides={overrides} /> : <ArticleLayout />
   }
 
   return (
     <ArticleProvider>
-        <ArticleLayout postOverrideFilter={postOverrideFilter}/>
+        <ReturnLayout />
     </ArticleProvider>
   )
 }
