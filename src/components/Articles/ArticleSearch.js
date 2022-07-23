@@ -20,16 +20,16 @@ function ArticleSearch( { postFilter, setPostFilter } ) {
       })
     }
   return (
-    <Box
-    component="form"
-    sx={{
-      '& > :not(style)': { m: 1, width: '100%' },
-    }}
-    noValidate
-    autoComplete="on"
-    onSubmit={(e)=> {e.preventDefault()}}
-  >
-    <TextField onChange={handleTextChange} value={postFilter.text} id="search" label="Search" variant="outlined" />
+    <Box sx={{width: 'auto', m: '3em'}}>
+      <Box
+      // sx={{width: '100%'}}
+      component="form"
+      noValidate
+      autoComplete="on"
+      onSubmit={(e)=> {e.preventDefault()}}
+    >
+      <TextField onChange={handleTextChange} value={postFilter.text} id="search" label="Search" variant="outlined" />
+    </Box>
   </Box>
   )
 }

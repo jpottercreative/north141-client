@@ -5,7 +5,8 @@ import ArticleLayout from './ArticleLayout'
 
 function Articles( { postOverride } ) {
 
-  console.log(postOverride)
+  if (postOverride) console.log(`postOverride received: ` + postOverride)
+
   let parsedPostOverride = []
   return (
     <ArticleProvider>

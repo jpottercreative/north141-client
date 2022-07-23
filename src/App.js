@@ -15,8 +15,8 @@ import { createTheme } from "@mui/material/styles";
 
 function App() {
    const [isDarkMode, setIsDarkMode] = useState(true)
-   const [colorMode, setColorMode] = useState('light')
-   const [navigation, setNavigation] = useState('articles')
+   const [colorMode, setColorMode] = useState('dark')
+   const [navigation, setNavigation] = useState('home')
    
    const toggleDarkMode = () => {
       setIsDarkMode((isDarkMode) => !isDarkMode)

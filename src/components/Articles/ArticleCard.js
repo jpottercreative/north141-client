@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useArticleContext } from '../../contexts/ArticleContext'
 
-export default function ArticleCard( { post} ) {
+export default function ArticleCard( { post } ) {
     // console.log(post.id)
     const imageUrl = post.attributes.featured_image.data.attributes.formats.small.url
 
@@ -18,7 +18,7 @@ export default function ArticleCard( { post} ) {
         console.log(e.target)
     }
   return (
-    <Card onClick={handleCardClick} sx={{ maxWidth: 345 }}>
+    <Card onClick={handleCardClick} sx={{ maxWidth: 'auto' }}>
       <CardMedia
         component="img"
         image={imageUrl}

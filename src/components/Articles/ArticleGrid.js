@@ -10,16 +10,17 @@ function ArticleGrid( {posts} ) {
 
 
   const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    backgroundColor: theme.palette.mode === 'dark' ? 'pink' : '#fff',
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'left',
     color: theme.palette.text.secondary,
+    width: 'auto'
   }));
 
   const cards = posts.map((post) => {
     return (
-      <Grid item key={post.id} xs={6}>
+      <Grid item key={post.id} xs={12} sm={6} md={3}  >
         <Item>
           <ArticleCard post={post} />
         </Item>
@@ -31,7 +32,7 @@ function ArticleGrid( {posts} ) {
   // console.log(cards)
   return (
     <Box sx={{ flexGrow: 1 }}>      
-      <Grid container spacing={4}>  
+      <Grid container sx={{ padding: "3em", }} spacing={6}>  
           {cards}
       </Grid>
     </Box>

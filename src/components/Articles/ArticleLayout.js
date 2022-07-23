@@ -39,7 +39,7 @@ function ArticleLayout( { postOverride } ) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-        <ArticleSearch postFilter={postFilter} setPostFilter={setPostFilter} />
+        {/* <ArticleSearch postFilter={postFilter} setPostFilter={setPostFilter} /> */}
         <ArticleGrid postFilter={postFilter} posts={filteredPostData}/>
     </Box>
   )
