@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { ArticleProvider } from '../../contexts/ArticleContext'
 import ArticleLayout from './ArticleLayout'
-
+import ArticleOverride from './ArticleOverride'
 
 function Articles( { postOverride } ) {
   const [overrides, setOverrides] = useState([])
@@ -10,13 +10,11 @@ function Articles( { postOverride } ) {
     async function override() {
       try {
         const response = await postOverride
-        // console.log(response)
-        const data = await response
-        // console.log(data)
-        setOverrides(data.data)
+
+        setOverrides(response.data)
       }
       catch(error) {
-        console.log(`Could not get overrides: ${error}`);
+        console.log(`Overrides detected but not found, err: ${error}`);
       }
     }
     override()
@@ -28,7 +26,7 @@ function Articles( { postOverride } ) {
 
   
   const ReturnLayout = () => {
-    return overrides.length > 0 ? <ArticleLayout postOverrides={overrides} /> : <ArticleLayout />
+    return overrides.length > 0 ? <ArticleOverride postOverrides={overrides} /> : <ArticleLayout />
   }
 
   return (

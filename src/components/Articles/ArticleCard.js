@@ -10,9 +10,10 @@ export default function ArticleCard( { post } ) {
     // console.log(post.id)
     const imageUrl = post.attributes.featured_image.data.attributes.formats.small.url
 
-    const authorList = post.attributes.authors.data.map((author) => {
-        return author.attributes.firstname
-    })
+    // authorList not available yet due to return not santized correctly
+    // const authorList = post.attributes.authors.data.map((author) => {
+    //     return author.attributes.firstname
+    // })
 
     const handleCardClick = (e) => {
         console.log(e.target)

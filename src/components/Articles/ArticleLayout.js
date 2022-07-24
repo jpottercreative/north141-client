@@ -5,7 +5,7 @@ import { useArticleContext } from '../../contexts/ArticleContext'
 import ArticleSearch from './ArticleSearch';
 
 function ArticleLayout( { postOverrides } ) {
-
+    console.log('article standard')
     const { posts }  = useArticleContext()
     console.log(postOverrides ? true : false)
     console.log(posts)
