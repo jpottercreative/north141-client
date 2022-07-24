@@ -51,3 +51,22 @@ Front end in React with styled components and Material UI:
 
 » Video post - »HERO Video BG Teaser (use mux?) (animated gif?, webm version? YT-> webm?), scroll down to play video without frame, scroll again for production details/notes, inside window (or click out to YT)
 
+
+**To Do List**
+---
++ Technology to add
+  + React Router
+    + '/', render `<Homepage>`
+    + '/post-name', render `<Post post={params}>`
+    + '/about', render `<About />`
+  + React Helmet
++ Components to build
+  + Hero image block with title
+  + Multi Image Grid (needs touchup and API definition)
+  + Text Block with section header
+  + Video hero with BG video?
++ Page Templates:
+  + Homepage
+  + Blog Post
+  + Video Post
+  + Photo Gallery Post

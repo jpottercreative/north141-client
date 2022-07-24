@@ -19,11 +19,6 @@ function Articles( { postOverride } ) {
     }
     override()
   }
-
-  // console.log(Object.entries(overrides).length)
-
-  console.log(overrides)
-
   
   const ReturnLayout = () => {
     return overrides.length > 0 ? <ArticleOverride postOverrides={overrides} /> : <ArticleLayout />

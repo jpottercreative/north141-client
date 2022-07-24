@@ -18,11 +18,7 @@ export default function PostGrid() {
         featured: true,
       }
    const { posts } = useBlogContext()
-      console.log(posts)
-//    posts.map(p => console.log(p.attributes.featured_image.data.attributes.formats.large.url))
-    // const postsWithImages = posts.map((p) => p)
-    //   console.log(postsWithImages)
-    // postsWithImages.map(p => console.log(p.id))
+
   return (
     <ImageList sx={{ width: '100%', height: '75vh' }}>
       <ImageListItem key="Subheader" cols={2}>

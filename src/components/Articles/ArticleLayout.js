@@ -5,14 +5,11 @@ import { useArticleContext } from '../../contexts/ArticleContext'
 import ArticleSearch from './ArticleSearch';
 
 function ArticleLayout( { postOverrides } ) {
-    console.log('article standard')
-    const { posts }  = useArticleContext()
-    console.log(postOverrides ? true : false)
-    console.log(posts)
+
+  const { posts }  = useArticleContext()
 
     const filteredPosts = postOverrides ? postOverrides : posts 
-
-    console.log(filteredPosts)
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
         {/* <ArticleSearch postFilter={postFilter} setPostFilter={setPostFilter} /> */}

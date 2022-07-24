@@ -8,8 +8,7 @@ import Grid from '@mui/material/Grid';
 
 function ArticleGrid( {posts} ) {
 
-console.log('****')
-console.log(posts)
+
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? 'pink' : '#fff',
     ...theme.typography.body2,

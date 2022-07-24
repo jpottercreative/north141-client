@@ -19,8 +19,7 @@ export const HomepageProvider = ({children}) => {
             // const response = await http.get("/api/homepage?fields[0]=attributes&populate[homepage_body][populate]=%2A")
             const response = await http.get("/api/landing-pages/home")
             
-            // console.log(response.data.data.attributes)
-            response.status >= 200 ? console.log('homepage res okay') : console.log('nono')
+            // response.status >= 200 ? console.log('homepage res okay') : console.log('nono')
             setHomepageData(response.data.data.attributes)
         }
         return getHomepage

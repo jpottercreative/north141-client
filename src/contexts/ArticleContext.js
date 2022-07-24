@@ -21,7 +21,7 @@ export const ArticleProvider = ({children}) => {
     useEffect(() => {
         const getAllPosts = async () => {
             const response = await http.get("/api/blogposts?populate=*")
-            response.status >= 200 ? console.log('res okay') : console.log('nono')
+            // response.status >= 200 ? console.log('res okay') : console.log('nono')
             const responseArr = await Object.values(response.data.data)
             setPosts(responseArr)
         }
