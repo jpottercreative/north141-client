@@ -8,7 +8,7 @@ function HomepageLayout() {
   // imports the homepage context through axios (a context provider)
     const {homepageData} = useHomepageContext()
     // console.log(`your homepage data~: `)
-    // console.log(homepageData)
+    console.log(homepageData)
 
   return (
     <Box
