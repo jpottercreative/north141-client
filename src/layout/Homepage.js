@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from '../components/Hero/Old_HeroSection'
+import HeroSection from '../components/Hero/HeroSection'
 import HomepageLayout from '../components/Homepage/HomepageLayout'
 import { HomepageProvider } from '../contexts/HomepageContext'
 
