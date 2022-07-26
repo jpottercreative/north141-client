@@ -4,9 +4,10 @@ import Articles from '../Articles/Articles'
 import Box from '@mui/material/Box';
 
 function HomepageLayout() {
+  // imports the homepage context through axios (a context provider)
     const {homepageData} = useHomepageContext()
     // console.log(`your homepage data~: `)
-    // console.log(homepageData)
+    console.log(homepageData)
 
   return (
     <Box

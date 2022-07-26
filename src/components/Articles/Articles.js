@@ -7,6 +7,7 @@ function Articles( { postOverride } ) {
   const [overrides, setOverrides] = useState([])
 
  if (postOverride) {
+  // waiting to see if the data is there - if it is, articles will render
     async function override() {
       try {
         const response = await postOverride
