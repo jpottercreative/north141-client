@@ -2,6 +2,7 @@ import React from 'react'
 import { useHomepageContext } from '../../contexts/HomepageContext'
 import Articles from '../Articles/Articles'
 import Box from '@mui/material/Box';
+import Rando from '../Rando';
 
 function HomepageLayout() {
     const {homepageData} = useHomepageContext()
@@ -14,6 +15,7 @@ function HomepageLayout() {
       <Box>
       Your homepage friend
       </Box>
+      <Rando heroData={homepageData.page_hero} />
       <Articles postOverride={homepageData.blogposts}/>
       {/* <Articles /> */}
     
