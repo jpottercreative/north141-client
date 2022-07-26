@@ -2,6 +2,7 @@ import React from 'react'
 import { useHomepageContext } from '../../contexts/HomepageContext'
 import Articles from '../Articles/Articles'
 import Box from '@mui/material/Box';
+import HeroSection from '../Hero/Old_HeroSection';
 
 function HomepageLayout() {
   // imports the homepage context through axios (a context provider)
@@ -17,7 +18,7 @@ function HomepageLayout() {
       </Box>
       <Articles postOverride={homepageData.blogposts}/>
       {/* <Articles /> */}
-    
+      <HeroSection />
 
     </Box>
   )
