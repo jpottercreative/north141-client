@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import http from '../http'
 import PostTemplateChooser from '../components/PostTemplateChooser'
-import { PostProvider} from '../contexts/PostContext'
 
 function PostLayout() {
+  const [postData, setPostData] = useState({})
   const params = useParams()
-  const slug = params.id
+  const postSlug = params.id
 
-  console.log(`**SLUG: ` + slug)
-  
+  const getPost = async () => {
+    const response = await http.get(`/api/blogpost/${postSlug}`)
+    const data = await response.data.data.attributes
+    setPostData(data)
+  }
+
+  useEffect(() => {
+    getPost()
+  }, [])
+
   return (
-    <PostProvider>
-      <PostTemplateChooser slug={slug}/>
-    </PostProvider>
+    <div>
+      <PostTemplateChooser postData={postData}/>
+    </div>
   )
 }
 

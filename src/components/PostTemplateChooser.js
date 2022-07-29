@@ -1,19 +1,29 @@
 import React from 'react'
-import { usePostContext } from '../contexts/PostContext'
+import BlogPostTemplate from './templates/BlogPostTemplate'
+import PhotoPostTemplate from './templates/PhotoPostTemplate'
+import VideoPostTemplate from './templates/VideoPostTemplate'
 
+function PostTemplateChooser( {postData} ) {
 
-function PostTemplateChooser( {slug} ) {
+  console.log(postData.post_type)
 
-    const { getPost, postData } = usePostContext()
-
-    // console.log(`+++CHOOSER SLUG: ` + slug)
-
-    // getPost(slug)
-
-    // console.log(postData)
+  const ReturnSelector = () => {
+    switch (postData.post_type) {
+      case 'blog' :
+        return <BlogPostTemplate postData={postData} />
+      case 'photo' : 
+        return <PhotoPostTemplate postData={postData} />
+      case 'video' : 
+        return <VideoPostTemplate postData={postData} />
+      default:
+        return <BlogPostTemplate postData={postData} />  
+        }
+      }
 
   return (
-    <div>PostTemplateChooser</div>
+    <div>
+      <ReturnSelector />
+    </div>
   )
 }
 
