@@ -9,28 +9,15 @@ import CookieIcon from '@mui/icons-material/Cookie';
 import EggIcon from '@mui/icons-material/Egg';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import LightIcon from '@mui/icons-material/Light';
-import { useNavigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header( { toggleDarkMode } ) {
-  const [navigation, setNavigation] = useState('home')
-
-  let navigate = useNavigate();
 
   const handleNav = (e) => {
-    // setNavigation(e.currentTarget.name)
     console.log('nav bloop: ' + e.currentTarget.name)
   }
 
 
-    // // switch tree for navigation
-    // switch (navigation) {
-    //    case 'home' :
-    //       return navigate('/')
-    //    case 'articles' :
-    //       return navigate('/articles')
-    //    case 'about' :
-    //       return navigate('/about')
-    // }
  
   
   return (

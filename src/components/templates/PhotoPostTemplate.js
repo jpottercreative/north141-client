@@ -1,7 +1,9 @@
 import React from 'react'
 
-function PhotoPostTemplate() {
+function PhotoPostTemplate( { postData } ) {
+    console.log(postData)
   return (
+
     <div>PhotoPostTemplate</div>
   )
 }

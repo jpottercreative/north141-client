@@ -4,10 +4,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useArticleContext } from '../../contexts/ArticleContext'
+// import { useArticleContext } from '../../contexts/ArticleContext'
+import { NavLink } from "react-router-dom";
+
 
 export default function ArticleCard( { post } ) {
-    // console.log(post.id)
+    console.log(post.attributes.post_slug)
     const imageUrl = post.attributes.featured_image.data.attributes.formats.small.url
 
     // authorList not available yet due to return not santized correctly
@@ -19,6 +21,7 @@ export default function ArticleCard( { post } ) {
         console.log(e.target)
     }
   return (
+    <NavLink to={post.attributes.post_slug} >
     <Card onClick={handleCardClick} sx={{ maxWidth: 'auto' }}>
       <CardMedia
         component="img"
@@ -41,5 +44,6 @@ export default function ArticleCard( { post } ) {
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
+    </NavLink>
   );
 }

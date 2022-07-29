@@ -1,6 +1,9 @@
 import React from 'react'
 
-function BlogPostTemplate() {
+function BlogPostTemplate( { postData } ) {
+    console.log(postData)
+
+
   return (
     <div>BlogPostTemplate</div>
   )

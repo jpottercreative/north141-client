@@ -22,6 +22,7 @@ function PostTemplateChooser( {postData} ) {
 
   return (
     <div>
+      <h1>{postData.title}</h1>
       <ReturnSelector />
     </div>
   )

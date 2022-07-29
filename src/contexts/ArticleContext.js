@@ -22,7 +22,7 @@ export const ArticleProvider = ({children}) => {
         return getAllPosts
     }, [])
 
-    // console.log(posts)
+    console.log(posts)
     // console.log(posts)
 
     const value = {
