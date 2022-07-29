@@ -2,13 +2,16 @@ import React from 'react'
 import BlogPostTemplate from './templates/BlogPostTemplate'
 import PhotoPostTemplate from './templates/PhotoPostTemplate'
 import VideoPostTemplate from './templates/VideoPostTemplate'
+import PaginationSimple from './PostTemplateComponents/PaginationSimple'
 
 function PostTemplateChooser( {postData} ) {
 
-  console.log(postData.post_type)
+  console.log(postData)
 
-  const ReturnSelector = () => {
-    switch (postData.post_type) {
+  
+  const ReturnSelector = (postData) => {
+    switch ('blog' || postData.attributes.post_type) {
+      // const response = await postData.attributes post_type
       case 'blog' :
         return <BlogPostTemplate postData={postData} />
       case 'photo' : 
@@ -22,8 +25,9 @@ function PostTemplateChooser( {postData} ) {
 
   return (
     <div>
-      <h1>{postData.title}</h1>
-      <ReturnSelector />
+      <PaginationSimple currentId={postData.id}/>
+      <h1>{postData.attributes.title}</h1>
+      <ReturnSelector /> 
     </div>
   )
 }

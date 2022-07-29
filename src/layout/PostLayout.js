@@ -10,7 +10,7 @@ function PostLayout() {
 
   const getPost = async () => {
     const response = await http.get(`/api/blogpost/${postSlug}`)
-    const data = await response.data.data.attributes
+    const data = await response.data.data
     setPostData(data)
   }
 

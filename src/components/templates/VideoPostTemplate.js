@@ -1,7 +1,7 @@
 import React from 'react'
 
 function VideoPostTemplate( { postData } ) {
-    console.log(postData)
+    // console.log(postData)
 
   return (
     <div>VideoPostTemplate</div>

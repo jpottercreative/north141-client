@@ -1,7 +1,7 @@
 import React from 'react'
 
 function PhotoPostTemplate( { postData } ) {
-    console.log(postData)
+    // console.log(postData)
   return (
 
     <div>PhotoPostTemplate</div>
