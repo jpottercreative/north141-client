@@ -64,9 +64,8 @@ function App() {
             <Header toggleDarkMode={toggleDarkMode} />
             <Routes>
                   <Route path="/" element={<Homepage />} />
-                  <Route path="articles" element={<Articles />}>
-                     <Route path=":postId" element={<PostLayout />} />
-                  </Route>
+                  <Route path="articles" element={<Articles />} />
+                  <Route path="articles/:id" element={<PostLayout />} />
                   <Route path="/about" element={<About />} />
             </Routes>
                </Box>

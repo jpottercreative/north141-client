@@ -18,7 +18,7 @@ export default function Header( { toggleDarkMode } ) {
 
   const handleNav = (e) => {
     // setNavigation(e.currentTarget.name)
-    console.log('nav bloop: ' + e.target.name)
+    console.log('nav bloop: ' + e.currentTarget.name)
   }
 
 

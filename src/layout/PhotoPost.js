@@ -1,6 +1,7 @@
 import React from 'react'
 
-function PhotoPost() {
+function PhotoPost( {post} ) {
+
   return (
     <div>PhotoPost</div>
   )
