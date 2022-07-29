@@ -10,13 +10,20 @@ import Header from './components/Header';
 import Homepage from "./layout/Homepage"
 import Articles from "./components/Articles/Articles"
 import About from './layout/About';
+import PostLayout from './layout/PostLayout';
 import Typography from '@mui/material/Typography';
 import { createTheme } from "@mui/material/styles";
+import ReactDOM from "react-dom/client";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 
 function App() {
    const [isDarkMode, setIsDarkMode] = useState(true)
    const [colorMode, setColorMode] = useState('dark')
-   const [navigation, setNavigation] = useState('home')
    
    const toggleDarkMode = () => {
       setIsDarkMode((isDarkMode) => !isDarkMode)
@@ -31,37 +38,41 @@ function App() {
       },
     });
 
-   const AppBody = () => {
-      // switch tree for navigation
-      switch (navigation) {
-         case 'home' :
-            return <Homepage />
-            break
-         case 'articles' :
-            return <Articles />
-            break
-         case 'about' :
-            return <About />
-            break
-         default: 
-            return <Homepage />
-      }
-   }
+   // const AppBody = () => {
+   //    // switch tree for navigation
+   //    switch (navigation) {
+   //       case 'home' :
+   //          return <Homepage />
+   //          break
+   //       case 'articles' :
+   //          return <Articles />
+   //          break
+   //       case 'about' :
+   //          return <About />
+   //          break
+   //       default: 
+   //          return <Homepage />
+   //    }
+   // }
 
   return (
+   <BrowserRouter>
       <ThemeProvider theme={appTheme}>
          <ThemeProvider theme={themeColorMode}>
-         <CssBaseline enableColorScheme />
-         
-         <Header toggleDarkMode={toggleDarkMode} setNavigation={setNavigation}/>
-         <Typography variant='h3'>
-             + {navigation.toUpperCase()}
-         </Typography>
-         <Box>
-            <AppBody />
-         </Box>
+            <CssBaseline enableColorScheme />
+               <Box>
+            <Header toggleDarkMode={toggleDarkMode} />
+            <Routes>
+                  <Route path="/" element={<Homepage />} />
+                  <Route path="articles" element={<Articles />}>
+                     <Route path=":postId" element={<PostLayout />} />
+                  </Route>
+                  <Route path="/about" element={<About />} />
+            </Routes>
+               </Box>
          </ThemeProvider>
      </ThemeProvider>
+   </BrowserRouter>
   )
 }
 
