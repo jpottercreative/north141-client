@@ -18,15 +18,20 @@ export const PostProvider = ({children}) => {
         // const response = await http.get(`/api/blogpost/${slug}`)
         // const data = await response.data.data.attributes
         setPostSlug(slug)
-        findPost()
+        // findPost() 
         // console.log(response)
     }
 
-    const findPost = async () => {
-        const response = await http.get(`/api/blogpost/${postSlug}`)
-        const data = await response.data.data.attributes
-        setPostData(data)
-    }
+    useEffect(()=>{
+        console.log(`context-useEffect: ` + postSlug)
+        const findPost = async () => {
+            const response = await http.get(`/api/blogpost/${postSlug}`)
+            const data = await response.data.data.attributes
+            setPostData(data)
+        }
+        return findPost
+    }, [postSlug])
+
 
 
 
