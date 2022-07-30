@@ -8,13 +8,18 @@ import Box from '@mui/material/Box';
 function PageBody({postDataBodyArr}) {
     // console.log(postDataBodyArr)
 
-    const test = {err: 'holey'}
 
         const components = postDataBodyArr.map((comp) => {
-            // console.log(comp)
+            console.log(comp)
             switch (comp.__component) {
                 case 'comps.hero' :
-                    return <HeroComp key={comp.id} image={comp.image} test={test}/>
+                    return <HeroComp 
+                    key={comp.id} 
+                    image={comp.image.data.attributes} 
+                    title={comp.title}
+                    subtitle={comp.subtitle}
+                    link={comp.link}
+                    />
                 case 'comps.image-collection' :
                     return <ImageCollectionComp key={comp.id} comp={comp}/>
                 case 'comps.rich-text' :

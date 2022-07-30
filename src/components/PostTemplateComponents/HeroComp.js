@@ -2,14 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Box from '@mui/material/Box';
 
-// const HeroStyled = styled.Box`
-// background-size:cover;
-// background-position:center center;
-// background-attachment:fixed;
-// text-align:center; 
-// position:relative;
-// width: 100%;
-// `
 const Inner = styled.div`
 min-height:600px;
 position: relative;
@@ -46,17 +38,20 @@ const HeroStyled = styled(Box)({
     width: '100%'
   });
 
-function HeroComp({ image, title, subtitle, link, test }) {
-// console.log(image.formats.large.url)
-    const backgroundUrl = image.formats.large.url ? image.formats.large.url : ""
-    const subtitleCopy = subtitle ? subtitle : null
-    console.log(test)
+function HeroComp({ image, title, subtitle, link }) {
+// console.log(image)
+    const backgroundUrl = image ? image.formats.large.url : null
+    const subtitleCopy = subtitle ? subtitle : ""
+
   return (
+    
     <HeroStyled className='hero-styled' sx={{background:`url(${backgroundUrl})`}}>
         <Inner>
             <Copy>
+                <a href={link}>
                 <h1>{title}</h1>
                 <p>{subtitleCopy}</p>
+                </a>
             </Copy>
         </Inner>
     </HeroStyled>
