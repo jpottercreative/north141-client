@@ -57,7 +57,7 @@ Front end in React with styled components and Material UI:
 + Technology to add
   + React Router
     + '/', render `<Homepage>`
-    + '/post-name', render `<Post post={params}>`
+    + '/articles/post-name', render `<Post post={params}>`
     + '/about', render `<About />`
   + React Helmet
 + Components to build

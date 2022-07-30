@@ -17,7 +17,8 @@ function PostLayout() {
   const [postData, setPostData] = useState({
     id: "",
     attributes: {
-      title: ""
+      title: "",
+      post_type: 'blog',
     }
   })
   const params = useParams()
@@ -25,7 +26,7 @@ function PostLayout() {
 
   const getPost = async () => {
     const response = await http.get(`/api/blogpost/${postSlug}`)
-    console.log(response)
+    // console.log(response)
     const data = await response.data.data
     const meta = await response.data.meta
     setPostData(data)

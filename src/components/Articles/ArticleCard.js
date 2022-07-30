@@ -18,7 +18,7 @@ export default function ArticleCard( { post } ) {
     // })
 
     const handleCardClick = (e) => {
-        console.log(e.target)
+        // console.log(e.target)
     }
   return (
     <NavLink to={`/articles/${post.attributes.post_slug}`} >

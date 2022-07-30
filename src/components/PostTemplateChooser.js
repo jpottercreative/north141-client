@@ -4,12 +4,12 @@ import PhotoPostTemplate from './templates/PhotoPostTemplate'
 import VideoPostTemplate from './templates/VideoPostTemplate'
 import PaginationSimple from './PostTemplateComponents/PaginationSimple'
 
-function PostTemplateChooser( {postData, postMeta, changePage} ) {
-  console.log(postMeta)
+function PostTemplateChooser( {postData, postMeta} ) {
+  // console.log(postData.attributes.post_type)
 
   
-  const ReturnSelector = (postData) => {
-    switch ('blog' || postData.attributes.post_type) {
+  const ReturnSelector = () => {
+    switch (postData.attributes.post_type) {
       case 'blog' :
         return <BlogPostTemplate postData={postData} />
       case 'photo' : 
@@ -24,7 +24,7 @@ function PostTemplateChooser( {postData, postMeta, changePage} ) {
   return (
     <div>
       <PaginationSimple postMeta={postMeta} />
-      <h1>{postData.attributes.title}</h1>
+      {/* <h1>{postData.attributes.title}</h1> */}
       <ReturnSelector /> 
     </div>
   )

@@ -19,7 +19,7 @@ function About() {
         }
         return getPageData
     }, [])
-    console.log(imageArray)
+    // console.log(imageArray)
   return (
     <Paper elevation={0}>
         <Container component="main" maxWidth="md" >
