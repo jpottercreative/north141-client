@@ -18,7 +18,7 @@ function PostLayout() {
     id: "",
     attributes: {
       title: "",
-      post_type: 'blog',
+      post_type: '',
     }
   })
   const params = useParams()

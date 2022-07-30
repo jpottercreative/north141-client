@@ -5,7 +5,7 @@ import VideoPostTemplate from './templates/VideoPostTemplate'
 import PaginationSimple from './PostTemplateComponents/PaginationSimple'
 
 function PostTemplateChooser( {postData, postMeta} ) {
-  // console.log(postData.attributes.post_type)
+  console.log(postData)
 
   
   const ReturnSelector = () => {
@@ -16,8 +16,6 @@ function PostTemplateChooser( {postData, postMeta} ) {
         return <PhotoPostTemplate postData={postData} />
       case 'video' : 
         return <VideoPostTemplate postData={postData} />
-      default:
-        return <BlogPostTemplate postData={postData} />  
         }
       }
 

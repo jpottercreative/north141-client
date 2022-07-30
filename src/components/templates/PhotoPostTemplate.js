@@ -1,20 +1,10 @@
 import React from 'react'
 import HeroComp from '../PostTemplateComponents/HeroComp'
-import ImageCollectionComp from '../PostTemplateComponents/ImageCollectionComp'
-import RichTextComp from '../PostTemplateComponents/RichTextComp'
 import Box from '@mui/material/Box';
 import { PublishedDate } from '../PostTemplateComponents/ComponentFields/ComponentFields';
 import PageBody from '../PostTemplateComponents/PageBody';
 
 function PhotoPostTemplate( { postData } ) {
-    // console.log(postData.attributes.tags)
-
-    // const PageBody = (postData) => {
-    //   postData.attributes.page_body.map((comp) => {
-    //     console.log(comp)
-    //   })
-    // }
-
 
 
   return (

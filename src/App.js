@@ -61,13 +61,13 @@ function App() {
          <ThemeProvider theme={themeColorMode}>
             <CssBaseline enableColorScheme />
                <Box>
-            <Header toggleDarkMode={toggleDarkMode} />
-            <Routes>
-                  <Route path="/" element={<Homepage />} />
-                  <Route path="articles" element={<Articles />} />
-                  <Route path="articles/:slug" element={<PostLayout />} />
-                  <Route path="/about" element={<About />} />
-            </Routes>
+                  <Header toggleDarkMode={toggleDarkMode} />
+                  <Routes>
+                        <Route path="/" element={<Homepage />} />
+                        <Route path="articles" element={<Articles />} />
+                        <Route path="articles/:slug" element={<PostLayout />} />
+                        <Route path="/about" element={<About />} />
+                  </Routes>
                </Box>
          </ThemeProvider>
      </ThemeProvider>

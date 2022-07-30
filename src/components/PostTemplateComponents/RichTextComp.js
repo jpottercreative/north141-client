@@ -1,8 +1,18 @@
 import React from 'react'
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 
-function RichTextComp() {
+function RichTextComp( { comp } ) {
+  console.log(comp)
+  const sectionTitle = comp.section_title ? comp.sectionTitle : null
   return (
-    <div>RichTextComp</div>
+    <Box>
+      <Paper>
+        <Typography variant="h3" gutterBottom component="h3">{sectionTitle}</Typography>
+        {comp.richtext_block}  
+      </Paper>
+    </Box>
   )
 }
 
