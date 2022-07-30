@@ -6,6 +6,7 @@ import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { NavLink } from "react-router-dom";
 import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 
 
 function PaginationSimple( {postMeta} ) {
@@ -15,10 +16,14 @@ console.log(postMeta)
 const prevLink = postMeta.prevPost ? `/articles/${postMeta.prevPost.post_slug}` : '/articles'
 const nextLink = postMeta.nextPost ? `/articles/${postMeta.nextPost.post_slug}` : '/articles'
 
+const prevTitle = postMeta.prevPost ? postMeta.prevPost.title : 'Back to Articles'
+const nextTitle = postMeta.nextPost ? postMeta.nextPost.title : 'Back to Articles'
+
   return (
     <Box>
         <Paper>
         <NavLink to={prevLink} >
+          <Tooltip title={prevTitle}>
               <IconButton
                 name='previous'
                 size="large"
@@ -26,12 +31,13 @@ const nextLink = postMeta.nextPost ? `/articles/${postMeta.nextPost.post_slug}` 
                 color="inherit"
                 aria-label='previous'
                 sx={{ mr: 2 }}
-                
-              >
-                <ArrowLeftIcon name='previous'/>
+             >
+              <ArrowLeftIcon name='previous'/>
               </IconButton>
-            </NavLink>
+          </Tooltip>
+        </NavLink>
         <NavLink to={nextLink} >
+          <Tooltip title={nextTitle}>
               <IconButton
                 name='next'
                 size="large"
@@ -43,7 +49,8 @@ const nextLink = postMeta.nextPost ? `/articles/${postMeta.nextPost.post_slug}` 
               >
                 <ArrowRightIcon name='next'/>
               </IconButton>
-            </NavLink>
+            </Tooltip>
+        </NavLink>
         </Paper>
     </Box>
   )
