@@ -8,80 +8,40 @@ import { NavLink } from "react-router-dom";
 import IconButton from '@mui/material/IconButton';
 
 
-function PaginationSimple( {currentId} ) {
-    const [prev, setPrev] = useState({id: "1"})
-    const [next, setNext] = useState({id: "3"})
-    // fetch two posts around us, and give a tool-tip with the title pls
-    // api.north141.com/api/blogposts/?filters[id][$eq]=1
-    console.log(`current id: ` + currentId)
-    const waitForId = async () => {
-        let response = await currentId
-        console.log(response)
-        // let current = 0
-        // const getPrev = async () => {
-        //     const response = await http.get(`/api/blogposts/?filters[id][$eq]=${current - 1}`)
-        //     const data = await response.data.data
-        //     setPrev(data)
-        //   }
-        // const getNext = async () => {
-        //     const response = await http.get(`/api/blogposts/?filters[id][$eq]=${current + 1}`)
-        //     const data = await response.data.data
-        //     setNext(data)
-        //   }
-        // getPrev()
-        // getNext()
-    }
-    // console.log(`prev: `)
-    // console.log(prev)
-    // console.log(`next: `)
-    // console.log(next)
+function PaginationSimple( {postMeta} ) {
 
-    useEffect(() => {
-        waitForId()
-    }, [prev, next])
+console.log(postMeta)
 
-    // useEffect(() => {
-        // const getPrev = async () => {
-        //     const response = await http.get(`/api/blogposts/?filters[id][$eq]=${prev.id}`)
-        //     const data = await response.data.data
-        //     setPrev(data)
-        //   }
-        // const getNext = async () => {
-        //     const response = await http.get(`/api/blogposts/?filters[id][$eq]=${next.id}`)
-        //     const data = await response.data.data
-        //     setNext(data)
-        //   }
-        // getPrev()
-        // getNext()
-    // }, [next, prev])
+const prevLink = postMeta.prevPost ? `/articles/${postMeta.prevPost.post_slug}` : '/articles'
+const nextLink = postMeta.nextPost ? `/articles/${postMeta.nextPost.post_slug}` : '/articles'
 
   return (
     <Box>
         <Paper>
-        <NavLink to={"/articles/"+prev.page_slug} >
+        <NavLink to={prevLink} >
               <IconButton
-                name={prev.title}
+                name='previous'
                 size="large"
                 edge="start"
                 color="inherit"
-                aria-label={prev.title}
+                aria-label='previous'
                 sx={{ mr: 2 }}
                 
               >
-                <ArrowLeftIcon name={prev.title}/>
+                <ArrowLeftIcon name='previous'/>
               </IconButton>
             </NavLink>
-        <NavLink to={"/articles/"+next.page_slug} >
+        <NavLink to={nextLink} >
               <IconButton
-                name={next.title}
+                name='next'
                 size="large"
                 edge="start"
                 color="inherit"
-                aria-label={next.title}
+                aria-label='next'
                 sx={{ mr: 2 }}
                 
               >
-                <ArrowRightIcon name={next.title}/>
+                <ArrowRightIcon name='next'/>
               </IconButton>
             </NavLink>
         </Paper>

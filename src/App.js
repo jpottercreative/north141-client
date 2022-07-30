@@ -65,7 +65,7 @@ function App() {
             <Routes>
                   <Route path="/" element={<Homepage />} />
                   <Route path="articles" element={<Articles />} />
-                  <Route path="articles/:id" element={<PostLayout />} />
+                  <Route path="articles/:slug" element={<PostLayout />} />
                   <Route path="/about" element={<About />} />
             </Routes>
                </Box>
