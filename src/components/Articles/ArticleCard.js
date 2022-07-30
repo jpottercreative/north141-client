@@ -21,7 +21,7 @@ export default function ArticleCard( { post } ) {
         console.log(e.target)
     }
   return (
-    <NavLink to={post.attributes.post_slug} >
+    <NavLink to={`/articles/${post.attributes.post_slug}`} >
     <Card onClick={handleCardClick} sx={{ maxWidth: 'auto' }}>
       <CardMedia
         component="img"

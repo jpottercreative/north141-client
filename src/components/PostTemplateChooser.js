@@ -4,8 +4,7 @@ import PhotoPostTemplate from './templates/PhotoPostTemplate'
 import VideoPostTemplate from './templates/VideoPostTemplate'
 import PaginationSimple from './PostTemplateComponents/PaginationSimple'
 
-function PostTemplateChooser( {postData, postMeta} ) {
-
+function PostTemplateChooser( {postData, postMeta, changePage} ) {
   console.log(postMeta)
 
   
@@ -24,7 +23,7 @@ function PostTemplateChooser( {postData, postMeta} ) {
 
   return (
     <div>
-      <PaginationSimple postMeta={postMeta}/>
+      <PaginationSimple postMeta={postMeta} />
       <h1>{postData.attributes.title}</h1>
       <ReturnSelector /> 
     </div>

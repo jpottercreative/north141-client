@@ -34,11 +34,14 @@ function PostLayout() {
 
   useEffect(() => {
     getPost()
-  }, [])
+  }, [postSlug])
+
+
+  
 
   return (
     <div>
-      <PostTemplateChooser postData={postData} postMeta={postMeta}/>
+      <PostTemplateChooser postData={postData} postMeta={postMeta} />
     </div>
   )
 }
